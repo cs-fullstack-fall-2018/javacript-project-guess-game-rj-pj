@@ -124,5 +124,5 @@ function setUpTargetsAndPlay(numberOfTargets, displayTimeMs) {
 function cleanUp() {
     $("td").off("click");
     $("table").off("click");
-    $(".targetImg").remove();
+    $("ranImage").remove();
 }
