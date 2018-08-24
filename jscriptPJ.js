@@ -1,6 +1,8 @@
 // An array of selector images
 
 var imgArray = new Array();
+var riv;
+var ranImage;
 
 imgArray[0] = new Image();
 imgArray[0].src = 'planet0.png';
@@ -19,3 +21,11 @@ imgArray[4].src = 'planet4.png';
 
 imgArray[5] = new Image();
 imgArray[5].src = 'planet5.png';
+
+console.log(imgArray);
+
+function randomImage()
+{
+    riv = Math.floor(Math.random() * imgArray.length);
+    ranImage = imgArray[riv];
+}

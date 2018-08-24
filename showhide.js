@@ -29,6 +29,7 @@ function setUpTargetsAndPlay(numberOfTargets, displayTimeMs) {
     clicks = 0;
     targets = numberOfTargets;
     hits = 0;
+    randomImage();
 
     // Setup click detection for the entire table
     $("table").on("click", function () {
@@ -52,7 +53,8 @@ function setUpTargetsAndPlay(numberOfTargets, displayTimeMs) {
         var tdID = "td" + targetNum;
         var imgID = "img" + targetNum;
 
-        $('#' + tdID).on("click", clickedTarget).append("<img id = " + imgID + " class= 'targetImg' src='bird.png'>");
+
+        $('#' + tdID).on("click", clickedTarget).append("<img id = " + imgID + " class= 'targetImg' src='"+ranImage.src+"'>");
         $('#' + imgID).delay(2000).show(0);
         $('#' + imgID).delay(displayTimeMs).hide(0);
     }
