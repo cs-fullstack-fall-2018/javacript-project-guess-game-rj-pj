@@ -35,7 +35,7 @@ function randomImage()
 var x = document.getElementById("myAudio");
 
 function playAudio() {
-    console.log("call me")
+    console.log("call me");
     x.play();
     console.log("call me")
 }
