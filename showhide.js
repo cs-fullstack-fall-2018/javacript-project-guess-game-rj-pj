@@ -97,10 +97,12 @@ function setUpTargetsAndPlay(numberOfTargets, displayTimeMs) {
         // alert("clicked. Max = " + clicks);
         if (clicks == targets) {
             alert("No more clicks! You got " + hits + " out of " + targets);
+            $("td").on("click",playAudio());
             // Turn off click detection
             // $("td").off("click");
             // $("table").off("click");
             // $(".targetImg").remove();
+            $(this).inner = this.id;
             cleanUp();
         }
     });

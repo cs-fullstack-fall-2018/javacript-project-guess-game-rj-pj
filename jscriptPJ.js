@@ -29,3 +29,13 @@ function randomImage()
     riv = Math.floor(Math.random() * imgArray.length);
     ranImage = imgArray[riv];
 }
+
+
+// Plays sound when either upgrade is clicked
+var x = document.getElementById("myAudio");
+
+function playAudio() {
+    console.log("call me")
+    x.play();
+    console.log("call me")
+}
