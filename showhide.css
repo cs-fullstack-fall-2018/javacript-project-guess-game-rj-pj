@@ -8,7 +8,6 @@ table {
 td {
     width: 100px;
     height: 100px;
-    /*cursor: none;*/
 }
 
 body{
@@ -19,4 +18,32 @@ body{
 
 label{
     color: white;
+}
+
+#row1 {
+
+    cursor: not-allowed;
+}
+
+#row2 {
+
+    cursor: none;
+
+
+}
+
+#row3 {
+
+    cursor: crosshair;
+
+}
+
+#row4 {
+
+    cursor: none;
+}
+
+#row5 {
+
+    cursor: not-allowed;
 }
