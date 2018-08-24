@@ -52,11 +52,11 @@ function setUpTargetsAndPlay(numberOfTargets, displayTimeMs) {
         console.log("Table cell selected for target = " + targetNum);
         var tdID = "td" + targetNum;
         var imgID = "img" + targetNum;
-
+        var seconds=(displayTimeMs*1000);
 
         $('#' + tdID).on("click", clickedTarget).append("<img id = " + imgID + " class= 'targetImg' src='"+ranImage.src+"'>");
-        $('#' + imgID).delay(2000).show(0);
-        $('#' + imgID).delay(displayTimeMs).hide(0);
+        // $('#' + imgID).delay(2000).show(0);
+        $('#' + imgID).delay(seconds).hide(0);
     }
 
 };

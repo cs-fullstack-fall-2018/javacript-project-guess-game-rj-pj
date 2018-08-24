@@ -9,3 +9,13 @@ td {
     width: 100px;
     height: 100px;
 }
+
+body{
+    border: 2px solid black;
+    background: url("http://www.lecosmographe.com/blog/wp-content/uploads/2012/08/ngc4038_russell_960.jpg") fixed;
+
+}
+
+label{
+    color: white;
+}
