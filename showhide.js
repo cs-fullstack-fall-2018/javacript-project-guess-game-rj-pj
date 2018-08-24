@@ -24,6 +24,7 @@ function clickedTarget() {
     hits += 1;
 
 
+
     $("td1").off("click");
     $("td2").off("click");
     $("td3").off("click");
@@ -77,9 +78,8 @@ function clickedTarget() {
 
 
 
-
-
     $(this, ".ranImage.src").remove();
+    $(this).on(playAudio());
 }
 
 // The main function that sets up targets and starts a game
@@ -104,6 +104,7 @@ function setUpTargetsAndPlay(numberOfTargets, displayTimeMs) {
             // $(".targetImg").remove();
             $(this).inner = this.id;
             cleanUp();
+            reload();
         }
     });
 
@@ -114,12 +115,13 @@ function setUpTargetsAndPlay(numberOfTargets, displayTimeMs) {
         console.log("Table cell selected for target = " + targetNum);
         var tdID = "td" + targetNum;
         var imgID = "img" + targetNum;
-        var seconds=(displayTimeMs*1000);
+        var seconds=(targets*1000);
 
         $('#' + tdID).on("click", clickedTarget).append("<img id = " + imgID + " class= 'targetImg' src='"+ranImage.src+"'>");
         // $('#' + imgID).delay(2000).show(0);
         $('#' + imgID).delay(seconds).hide(0);
     }
+    
 
 }
 
@@ -128,3 +130,20 @@ function cleanUp() {
     $("table").off("click");
     $("ranImage").remove();
 }
+
+function reload() {
+        location.reload();
+}
+
+     $(document.body).bind("memmove keypress", function(e) {
+         time = new Date().getTime();
+     });
+
+     function refresh() {
+         if(new Date().getTime() - time >= 5000)
+             window.location.reload(true);
+         else
+             setTimeout(refresh, 10000);
+     }
+
+     setTimeout(refresh, 10000);
