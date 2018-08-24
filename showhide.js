@@ -87,6 +87,7 @@ function setUpTargetsAndPlay(numberOfTargets, displayTimeMs) {
     clicks = 0;
     targets = numberOfTargets;
     hits = 0;
+    cleanUp();
     randomImage();
 
     // Setup click detection for the entire table
@@ -97,9 +98,10 @@ function setUpTargetsAndPlay(numberOfTargets, displayTimeMs) {
         if (clicks == targets) {
             alert("No more clicks! You got " + hits + " out of " + targets);
             // Turn off click detection
-            $("td").off("click");
-            $("table").off("click");
-            $(".targetImg").remove();
+            // $("td").off("click");
+            // $("table").off("click");
+            // $(".targetImg").remove();
+            cleanUp();
         }
     });
 
@@ -117,4 +119,10 @@ function setUpTargetsAndPlay(numberOfTargets, displayTimeMs) {
         $('#' + imgID).delay(seconds).hide(0);
     }
 
+}
+
+function cleanUp() {
+    $("td").off("click");
+    $("table").off("click");
+    $(".targetImg").remove();
 }
